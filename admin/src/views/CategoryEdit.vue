@@ -1,0 +1,26 @@
+<template>
+    <div>
+        <h1>添加新数据</h1>
+        <el-form label-width="120px">
+            <el-form-item label="名称">
+                <el-input v-model="model.name"></el-input>
+            </el-form-item>
+            <el-form-item>
+            <el-button type="primary" native-type="submit">保存</el-button>
+        </el-form-item>
+        </el-form>
+    </div>
+</template>
+<script>
+export default {
+    data(){
+        return {
+            model : {}
+        }
+    },
+    
+}
+</script>
+<style lang="stylus">
+
+</style>
