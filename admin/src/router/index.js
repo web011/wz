@@ -12,8 +12,9 @@ Vue.use(VueRouter)
     name: 'Main',
     component: Main,
     children:[
-      {path:'/CategoryEdit/create',component:CategoryEdit},
-      {path:'/CategorList/list',component:CategorList},
+      {path:'/categories/create',component:CategoryEdit},
+      {path:'/categories/edit/:id',component:CategoryEdit,props:true},
+      {path:'/categories/list',component:CategorList},
     ]
   },
 ]
