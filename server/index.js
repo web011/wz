@@ -6,6 +6,8 @@ app.use(require('cors')())
 
 app.use(express.json())
 
+app.use('./upload',express.static(__dirname + '/upload'))
+
 require("./plugins/db")(app)
 require("./routes/admin")(app)
 
