@@ -11,7 +11,7 @@
                 <el-input v-model="model.title"></el-input>
             </el-form-item>
             <el-form-item label="详情">
-                <vue-editor v-model="model.body" id="editor"></vue-editor>
+                <vue-editor v-model="model.body" useCustomImageHandler @imageAdded="handleImageAdded"></vue-editor>
             </el-form-item>
             <el-form-item>
             <el-button type="primary" native-type="submit">保存</el-button>
@@ -57,6 +57,14 @@ export default {
             const res = await this.$http.get('/api/rest/categories');
             // console.log(res)
             this.categories = res.data;
+        },
+        async handleImageAdded(file,Editor,cursorLocation,resetUploader){
+            const formData = new FormData();
+            formData.append('file',file);
+            const res = await this.$http.post('upload',formData);
+            console.log(res)
+            Editor.insertEmbed(cursorLocation,'image',res.data.url);
+            resetUploader();
         },
     },
     created(){
