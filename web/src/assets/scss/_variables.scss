@@ -10,7 +10,9 @@ $colors:(
     'grey':#999,
     'grey-1':#666,
     'info':#4b67af,
+    'light-1':#d4d9de,
 );
+$border-color :map-get($colors, 'light-1' );
 // font-size
 $base-font-size:13px;
 $font-size:(

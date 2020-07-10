@@ -120,11 +120,21 @@ a{
 
 // nav
 .nav {
+    display: flex;
     .nav-item{
         border-bottom: 3px solid transparent;
         padding-bottom: 0.2rem;
         &.active{
-            border-bottom: 3px solid #fff;
+            color: map-get($colors, 'primary');
+            border-bottom-color:map-get($colors, 'primary');
+        }
+    }
+    &.nav-inverse {
+        .nav-item{
+            color: map-get($colors, 'white' );
+            &.active {
+                border-bottom-color: map-get($colors, 'white');
+            }
         }
     }
 }
@@ -139,10 +149,24 @@ a{
 
 // sprite
 .sprite {
-    background:url(../mes.jpg) no-repeat 0 0;
+    background:url(../index.png) no-repeat 0 0;
     background-size: 28.8462rem;
     display: inline-block;
     &.sprite-news {
-        
+        width: 1.7692rem;
+        height: 1.5385rem;
+        background-position: 63.546% 15.517%;;
+    }
+    // 箭头
+    &.sprite-arrow{
+        width: 0.7692rem;
+        height: 0.7692rem;
+        background-position: 38.577% 52.076%;
+    }
+    &.top-img{
+        width: 2.3077rem;
+        height: 2.3077rem;
+        background-position: 0 72.588%;
     }
 }
+

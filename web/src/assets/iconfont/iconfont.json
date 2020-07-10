@@ -1,0 +1,37 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1375630",
+      "name": "hero",
+      "font_class": "hero",
+      "unicode": "e664",
+      "unicode_decimal": 58980
+    },
+    {
+      "icon_id": "2166632",
+      "name": "播放",
+      "font_class": "play",
+      "unicode": "e651",
+      "unicode_decimal": 58961
+    },
+    {
+      "icon_id": "12996363",
+      "name": "三个点",
+      "font_class": "sangedian",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "14507471",
+      "name": "Menu",
+      "font_class": "Menu",
+      "unicode": "e6d5",
+      "unicode_decimal": 59093
+    }
+  ]
+}

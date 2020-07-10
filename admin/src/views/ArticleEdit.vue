@@ -52,11 +52,13 @@ export default {
             const res = await this.$http.get('/api/rest/articles/'+this.id);
             // console.log(res)
             this.model = res.data
+            console.log(this.model)
         },
         async fetchCategprise(){
             const res = await this.$http.get('/api/rest/categories');
             // console.log(res)
             this.categories = res.data;
+            console.log(this.categories)
         },
         async handleImageAdded(file,Editor,cursorLocation,resetUploader){
             const formData = new FormData();
