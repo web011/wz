@@ -3,11 +3,13 @@
         <div class="card-body pt-3">
             <div class="nav jc-between">
               <div class="nav-item" :class="{active:active == i}" v-for="(item ,i) of categories" :key="i" @click="active = i">
+                <!-- <div class="nav-item" :class="{active:active == i}" v-for="(item ,i) of categories" :key="i" @click="$refs.list.swiper.slideTo(i+1)"> -->
                 <div class="nav-link">{{item.name}}</div>
               </div>
             </div>
             <div class="pt-3">
-              <swiper ref="list" @slide-change="() => active = $refs.list.swiper.realIndex">
+              <swiper ref="list">
+                <!-- <swiper ref="list" @slide-change="() => active = $refs.list.swiper.realIndex"> -->
                 <swiper-slide v-for="(item,i) in categories" :key="i">
                   <slot name="items" :item="item"></slot>
                 </swiper-slide>

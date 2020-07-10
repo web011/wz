@@ -24,8 +24,8 @@
           <div v-for="(items,i) in item.newsList " :key="i" class="py-2 fs-md d-flex">
             <span class="text-info">[{{items.categories[0]}}]</span>
             <span class="px-2">|</span>
-            <span class="flex-1 text-dark">{{items.title}}</span>
-            <span>{{items.createdAt}}</span>
+            <span class="flex-1 text-dark-1 text-ellipse pr-2">{{items.title}}</span>
+            <span class="text-grey-1 fs-sm">{{items.createdAt | date}}</span>
           </div>
         </template>
       </m-list-card>
@@ -35,7 +35,13 @@
 </template>
 
 <script>
+import dayjs from 'dayjs'
 export default {
+    filters:{
+      date(val){
+        return dayjs(val).format('MM/DD')
+      }
+    },
     data() {
       return {
         swiperOptions: {

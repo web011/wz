@@ -26,6 +26,7 @@ module.exports = app =>{
         await Article.insertMany(newList)
         res.send(newList)
     })
+    // 导出新闻数据
     router.get('/news/list',async (req,res) => {
         const A = await Article.find();
         A.unshift({
@@ -50,5 +51,9 @@ module.exports = app =>{
         fns();
         res.send(arr)
     })
+
+    // 导出英雄数据
+
+    
     app.use('/web/api',router)
 }
