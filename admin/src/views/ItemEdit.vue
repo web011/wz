@@ -5,17 +5,8 @@
             <el-form-item label="名称">
                 <el-input v-model="model.name"></el-input>
             </el-form-item>
-            <el-form-item label="图标">
-                <el-upload
-                    class="avatar-uploader"
-                    :action="uploadUrl"
-                    :headers="getAuthHeaders()"
-                    :show-file-list="false"
-                    :on-success="afterUpload"
-                >
-                    <img v-if="model.icon" :src="model.icon" class="avatar">
-                    <i v-else class="el-icon-plus avatar-uploader-icon"></i>
-                    </el-upload>
+            <el-form-item label="装备图片url">
+                <el-input v-model="model.icon"></el-input>
             </el-form-item>
             <el-form-item>
             <el-button type="primary" native-type="submit">保存</el-button>

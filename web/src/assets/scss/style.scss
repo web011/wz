@@ -123,6 +123,21 @@ a{
     border-radius: 0.1538rem;
     font-size: map-get($font-size,'sm' ) * $base-font-size;
     padding: 0.2rem 0.6rem;
+    &.btn-lg{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i{
+            color:map-get($colors, 'primary' );
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        background: map-get($colors, 'white-1' );
+        border:1px solid map-get($colors, 'white-2' );
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+    }
 }
 
 // nav
@@ -177,3 +192,16 @@ a{
     }
 }
 
+
+// p标签
+p{
+    line-height: 1.5rem;
+}
+
+// border边框
+
+@each $dir in (top,right,bottom,left) {
+    .border-#{$dir} {
+        border-#{$dir}:1px solid $border-color;
+    }
+}

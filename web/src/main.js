@@ -6,8 +6,13 @@ import store from './store'
 import './assets/scss/style.scss'
 import './assets/iconfont/iconfont.css'
 
-import http from './http';
-Vue.prototype.$http = http;
+import axios from 'axios'
+
+Vue.prototype.$http = axios.create({
+    baseURL:process.env.VUE_APP_API_URL || '/web/api'
+    // baseURL:"http://127.0.0.1:3000/web/api/"
+});
+
 
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/swiper-bundle.css'

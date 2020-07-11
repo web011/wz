@@ -4,7 +4,8 @@ import router from './router'
 
 
 const http = axios.create({
-    baseURL:"http://127.0.0.1:3000"
+    baseURL:process.env.VUE_APP_API_URL || '',
+    // baseURL:"http://127.0.0.1:3000"
 });
 
 http.interceptors.request.use(function(config){

@@ -21,15 +21,24 @@
       <!-- end of nav icons -->
       <m-list-card icon="Menu" title="新闻资讯" :categories="newsCats">
         <template #items="{item}">
-          <div v-for="(items,i) in item.newsList " :key="i" class="py-2 fs-md d-flex">
+          <router-link tag="div" :to="`/articles/${items._id}`" v-for="(items,i) in item.newsList " :key="i" class="py-2 fs-md d-flex">
             <span class="text-info">[{{items.categories[0]}}]</span>
             <span class="px-2">|</span>
             <span class="flex-1 text-dark-1 text-ellipse pr-2">{{items.title}}</span>
             <span class="text-grey-1 fs-sm">{{items.createdAt | date}}</span>
+          </router-link>
+        </template>
+      </m-list-card>
+      <m-list-card icon="hero" title="英雄列表" :categories="heroCats">
+        <template #items="{item}">
+          <div class="d-flex flex-wrap" style="margin:0 -0.5rem;">
+            <router-link tag="div"  v-for="(hero,i) of item.heroList " :key="i" class="p-2 text-center" style="width:20%;" :to="`/heroes/${hero._id}`">
+              <img :src="hero.avatar" alt="" width="100%">
+              <div>{{hero.name}}</div>
+            </router-link>
           </div>
         </template>
       </m-list-card>
-      <m-card icon="hero" title="英雄列表"></m-card>
       <m-card icon="play" title="精彩视频"></m-card>
   </div>
 </template>
@@ -50,17 +59,22 @@ export default {
           },
         },
         newsCats:[],
+        heroCats:[]
       }
     },
     methods:{
       async fetchNewsCats(){
         const res = await this.$http.get('news/list');
         this.newsCats = res.data;
-        console.log(this.newsCats) 
+      },
+      async fetchHeroCats(){
+        const res = await this.$http.get('heroes/list');
+        this.heroCats = res.data;
       }
     },
     created(){
       this.fetchNewsCats();
+      this.fetchHeroCats();
     }
 }
 </script>

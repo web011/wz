@@ -20,6 +20,13 @@
       "unicode_decimal": 58961
     },
     {
+      "icon_id": "8508697",
+      "name": "返 回",
+      "font_class": "fanhui",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
       "icon_id": "12996363",
       "name": "三个点",
       "font_class": "sangedian",
